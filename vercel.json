@@ -1,7 +1,14 @@
 {
-  "functions": {
-    "api/*.py": {
-      "runtime": "python3.9"
+  "builds": [
+    {
+      "src": "api/latency.py",
+      "use": "@vercel/python"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/api/latency",
+      "dest": "api/latency.py"
+    }
+  ]
 }
